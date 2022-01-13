@@ -23,12 +23,14 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
 
+
   }
   loginFormSubmit() {
-    debugger
-    console.log("vipul");
+
+
     this._Router.navigate(['/new-user'])
-   
+
+
   }
 
 

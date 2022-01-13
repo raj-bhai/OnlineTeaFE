@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
@@ -10,9 +10,11 @@ import { Router } from '@angular/router';
 export class NewUserComponent implements OnInit {
   loginForm: FormGroup;
   constructor(private _FormBuilder: FormBuilder, private _Router: Router) {
-    this.loginForm = this._FormBuilder.group({
+    this.loginForm = new FormGroup({
 
-      otp: ['', [Validators.required]],
+      otp: new FormControl('', {
+        validators: [Validators.required]
+      })
 
     })
 
@@ -23,10 +25,18 @@ export class NewUserComponent implements OnInit {
 
 
   createFormSubmit() {
-    console.log("vipul");
-  //  this._Router.navigate(['/user'])
-    this._Router.navigate(['/provider']);
-    
-  
+    console.log(this.loginForm.value.otp);
+
+    if (this.loginForm.value.otp == 123456) {
+
+      this._Router.navigate(['/user'])
+
+    }
+    else {
+
+      this._Router.navigate(['/provider']);
+
+    }
+
   }
 }
