@@ -1,0 +1,119 @@
+<div class="container my-5">
+  <div class="bg-white shadow rounded">
+    <div class="p-3 border-bottom">
+      <div class="row align-items-center mb-1">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
+          <h1 class="h5 font-weight-bold mb-0">
+            Incoming Orders
+          </h1>
+          <div class="col-sm-3 d-flex align-items-center justify-content-end">
+            <div class="form-group">
+              <ng-select [items]="types" bindLabel="name" [searchable]="false" bindValue="_id" formControlName=""
+                placeholder="Select here" [clearable]="false"></ng-select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="position-relative">
+        <div class="table-responsive border border-bottom-0">
+          <table class="table table-sp-sm table_border_top_remover mb-0" aria-describedby="describe">
+            <thead class="header_main_bg border-bottom-0  text-white">
+              <tr>
+                <th style="color: rgb(189, 149, 149);" scope="col" class="border-bottom-0 border-top-0">Order</th>
+                <th style="color: rgb(189, 149, 149);" scope="col" class="border-bottom-0 border-top-0">Order Details
+                </th>
+                <th style="color: rgb(189, 149, 149);" scope="col" class="border-bottom-0 border-top-0">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-bottom cursor-pointer">
+                <td class="name_limit">
+                  <div class="d-flex align-items-center flex-nowrap">
+
+                    <div>
+                      <span> Order 1 </span>
+
+                    </div>
+
+                  </div>
+                </td>
+                <td> <button class="btn btn-outline-secondary position-relative"> Details </button></td>
+                <td>
+                  <button class="btn btn-outline-success position-relative" > <i class="fa fa-check"
+                      aria-hidden="true"></i> Accept </button>
+                  <button style="margin-left: 15px;" class="btn btn-outline-danger position-relative"
+                   ><i class="fa fa-times" aria-hidden="true"></i>
+                    Decline </button>
+                </td>
+              </tr>
+              <tr class="border-bottom cursor-pointer">
+                <td class="name_limit">
+                  <div class="d-flex align-items-center flex-nowrap">
+
+                    <div>
+                      <span> Order 2 </span>
+
+                    </div>
+
+                  </div>
+                </td>
+                <td> <button class="btn btn-outline-secondary position-relative"> Details </button></td>
+                <td>
+                  <button *ngIf="!isVerified" class="btn btn-outline-warning position-relative"
+                    (click)="open(content)">Delivered?</button>
+                  <button *ngIf="isVerified" class="btn btn-outline-secondary position-relative"
+                    disabled>Delivered</button>
+                </td>
+              </tr>
+              <tr class="border-bottom cursor-pointer">
+                <td class="name_limit">
+                  <div class="d-flex align-items-center flex-nowrap">
+
+                    <div>
+                      <span> Order 3</span>
+
+                    </div>
+
+                  </div>
+                </td>
+                <td> <button class="btn btn-outline-secondary position-relative"> Details </button></td>
+                <td>
+                  <button class="btn btn-outline-danger position-relative" disabled>Declined</button>
+                  <!-- <input type="file" accept="image/*" capture="environment"> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Delivered ?</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">Delivery PIN</label>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="4 digit PIN" maxlength="4">
+
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="verify()">
+      <ng-container *ngIf="isFormSubmitting; else isFormSubmittingDone"> <span class="dots-circle-spinner loading mr-1"
+          aria-hidden="true"></span> Verifying... </ng-container>
+      <ng-template #isFormSubmittingDone> Verify</ng-template>
+    </button>
+  </div>
+</ng-template>

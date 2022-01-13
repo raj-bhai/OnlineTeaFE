@@ -1,0 +1,65 @@
+<div>
+  <div class="bg-white shadow rounded">
+
+    <div class="p-3">
+      <ng-container>
+        <form [formGroup]="profileForm" (submit)="profileFormSubmit()">
+          <div class="form-row">
+            <img style="margin-left: 40%;"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuyhvvMKqex79PZ5KEVWttrpTwlSl254plbEEIBBDjEL_Ki65Cyv2vHDHtHQE90vrPxxM&usqp=CAU"
+              alt="no image" class="img-fluid" />
+            <br>
+
+            <div class="col-6">
+              <div class="form-group">
+                <label class="font-weight-600" for="">Name</label>
+                <div class="form-row">
+                  <div class="col-6">
+                    <input type="text" class="form-control" placeholder="Name" formControlName="name">
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="form-row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="font-weight-600" for="">Phone</label>
+                    <input type="text" class="form-control" formControlName="phone" maxlength="15">
+
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="font-weight-600" for="">Email</label>
+                    <input type="text" class="form-control" formControlName="email">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="form-group">
+                <label class="font-weight-600" for="">Address </label>
+                <input appGooglePlaces type="text" class="form-control" formControlName="address"
+                  placeholder="Type to search..">
+              </div>
+            </div>
+
+            <hr>
+            <div class="col text-right align-self-end">
+              <div class="form-group">
+                <button type="submit" class="btn btn-secondary" type="submit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </ng-container>
+    </div>
+
+  </div>
+</div>

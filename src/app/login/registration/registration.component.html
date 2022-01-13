@@ -1,0 +1,73 @@
+<div class="card" style="width: 70%;  margin: auto;">
+  <div class="bg-white shadow rounded">
+
+    <div class="p-3">
+      <ng-container>
+        <form [formGroup]="profileForm" (submit)="profileFormSubmit()">
+          <div class="form-row">
+            <img style="margin-left: 30%;"
+              src="https://png.pngtree.com/template/20190214/ourmid/pngtree-coffee-and-tea-logo-image_54910.jpg"
+              alt="no image" class="img-fluid" />
+            <br>
+
+            <div class="col-6">
+              <div class="form-group">
+                <label class="font-weight-600" for="">Name</label>
+                <div class="form-row">
+                  <div class="col-6">
+                    <input type="text" class="form-control" placeholder="Name" formControlName="name">
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="form-row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="font-weight-600" for="">Phone</label>
+                    <input type="text" class="form-control" formControlName="phone" maxlength="15">
+
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="font-weight-600" for="">Email</label>
+                    <input type="text" class="form-control" formControlName="email">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="form-group">
+                <label class="font-weight-600" for="">Address </label>
+                <input appRegistrationplace type="text" class="form-control" formControlName="address"
+                  placeholder="Type to search..">
+              </div>
+            </div>
+
+            <hr>
+            <div class="form-check">
+              <input class="form-check-input mt-1" type="checkbox" value="" id="flexCheckDefault"
+                (change)="isChecking($event)">
+              <label class="form-check-label" for="flexCheckDefault"> I have read and accept <span class="text-primary">
+                  <a href="http://www.teaboard.gov.in/" target="_blank">terms & condition </a>
+                </span><span>of ONLINE TEA .</span> </label>
+            </div>
+            <br>
+            <div class="col text-right align-self-end">
+              <div class="form-group">
+                <button type="submit" class="btn btn-secondary" type="submit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </ng-container>
+    </div>
+
+  </div>
+</div>
