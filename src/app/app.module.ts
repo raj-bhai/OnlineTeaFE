@@ -19,6 +19,10 @@ import { ServicesComponent } from './services/services.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
+import { Pipe, PipeTransform } from '@angular/core';
+import { TestingComponent } from './login/testing/testing.component';
+import { DatePipe } from '@angular/common'
+
 
 
 @NgModule({
@@ -34,7 +38,8 @@ import { ToastrModule } from 'ngx-toastr';
 
     OrderDetailsComponent,
     CartComponent,
-    RegistrationplaceDirective
+    RegistrationplaceDirective,
+    TestingComponent
    
   ],
   imports: [
@@ -54,7 +59,7 @@ import { ToastrModule } from 'ngx-toastr';
     }),
     
   ],
-  providers: [],
+  providers: [Pipe, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

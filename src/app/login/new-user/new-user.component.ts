@@ -10,13 +10,9 @@ import { Router } from '@angular/router';
 export class NewUserComponent implements OnInit {
   loginForm: FormGroup;
   constructor(private _FormBuilder: FormBuilder, private _Router: Router) {
-    this.loginForm = new FormGroup({
-
-      otp: new FormControl('', {
-        validators: [Validators.required]
+    this.loginForm = this._FormBuilder.group({
+      otp: ['', [Validators.required]]
       })
-
-    })
 
   }
 
@@ -25,9 +21,9 @@ export class NewUserComponent implements OnInit {
 
 
   createFormSubmit() {
-    console.log(this.loginForm.value.otp);
+  //  console.log(this.loginForm.value.otp);
 
-    if (this.loginForm.value.otp == 123456) {
+    if (this.loginForm.get('otp')?.value == 123456) {
 
       this._Router.navigate(['/user'])
 

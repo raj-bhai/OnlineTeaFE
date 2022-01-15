@@ -22,6 +22,18 @@
                 </div>
               </div>
             </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="font-weight-600" for="">Date Of Birth</label>
+                  <div class="form-row">
+                    <div class="col-6">
+                      <input type="text" class="form-control" formControlName="date" ngbDatepicker #d="ngbDatepicker" />
+                      <button (click)="d.toggle()">choose</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
 
             <div class="col-6">
               <div class="form-row">
@@ -64,6 +76,7 @@
                 <button type="submit" class="btn btn-secondary" type="submit">Submit</button>
               </div>
             </div>
+            
           </div>
         </form>
       </ng-container>

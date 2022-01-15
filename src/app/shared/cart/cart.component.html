@@ -1,1 +1,72 @@
-<p>cart works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+  <div class="card" style="width: 60%;  margin: auto;">
+    <br>
+    <div class="bg-white shadow rounded">
+      <div style="margin-left: 15px; ">
+        Deliver to <strong>Noida Sector 2</strong>
+        <!-- <button type="button" class="btn btn-outline-dark">Dark</button> -->
+        <input style="margin-left: 30%; width: 25%;" appRegistrationplace type="text" placeholder="change">
+      </div>
+      <br>
+      <div style="margin-left: 15px;">
+        list
+
+      </div>
+      <br>
+
+      <div style="margin-left: 15px;">
+        <h6>PRICE DETAILS</h6>
+        <p>Price (2 items) <span style="margin-left: 60%;">Rs.30</span></p>
+        <p>Discount <span style="margin-left: 66%;">Rs.5</span></p>
+        <p>Delivery Charges <span style="margin-left: 58%;color: green;">FREE</span></p>
+        <hr>
+        <p>Total <span style="margin-left: 69%;">Rs.25</span></p>
+        <br>
+      </div>
+      <div class="text-center">
+        <!-- <button type="button" class="btn btn-success">Place Order</button> -->
+        <ng-template #content let-modal>
+          <div>
+            <br>
+            <div class="text-center">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmpkKl9N01EhQuw5NBBWB6eaKlHyjnf90zbfFYlWLXAkQwQvpN-JD3-kGCv-UzUZteNsk&usqp=CAU"
+                alt="">
+
+            </div>
+            <br>
+            <br>
+            <div class="text-center">
+              <strong>Your order was successfull !!</strong>
+              <p>Check your orders section.</p>
+            </div>
+            <br>
+          </div>
+        </ng-template>
+
+        <button class="btn btn-success" (click)="open(content)">Place Order</button>
+        <hr>
+
+      </div>
+      <br>
+
+
+
+    </div>
+  </div>
+
+
+</body>
+
+</html>

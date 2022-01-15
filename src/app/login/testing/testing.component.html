@@ -1,0 +1,35 @@
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>D.o.B</th>
+    <th>Address</th>
+
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{name|uppercase}}</td>
+      <td>{{phone|currency:'INR'}}</td>
+      <td>{{email|lowercase|uppercase|lowercase}}</td>
+      <td>{{ndate| date:"MM/dd/yy"}}</td>
+      <td>{{address}}</td>
+    </tr>
+  </tbody>
+</table>
+<table class="text-center" style="margin-left: 40%;margin-top: 5%;">
+  <thead>
+    <th>Name</th>
+    <th>phone</th>
+    <th>address</th>
+    <th>salary</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let list of array">
+      <td>{{list.name}}</td>
+      <td>{{list.phone}}</td>
+      <td>{{list.address|slice:0:-1}}</td>
+      <td [ngStyle]="list.salary>1000?{'color': 'green'}:{'color': 'red'}">{{list.salary}}</td>
+    </tr>
+  </tbody>
+</table>
